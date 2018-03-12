@@ -13,7 +13,6 @@ import {
 	Dashicon,
 	IconButton,
 	PanelBody,
-	PanelColor,
 	ToggleControl,
 	withFallbackStyles,
 } from '@wordpress/components';
@@ -22,11 +21,11 @@ import {
 	RichText,
 	BlockControls,
 	BlockAlignmentToolbar,
-	ColorPalette,
 	ContrastChecker,
 	InspectorControls,
 	getColorClass,
 	withColors,
+	PanelColor,
 } from '@wordpress/blocks';
 
 /**
@@ -133,18 +132,18 @@ class ButtonBlock extends Component {
 								checked={ !! clear }
 								onChange={ this.toggleClear }
 							/>
-							<PanelColor title={ __( 'Background Color' ) } colorValue={ backgroundColor.value } >
-								<ColorPalette
-									value={ backgroundColor.value }
-									onChange={ backgroundColor.set }
-								/>
-							</PanelColor>
-							<PanelColor title={ __( 'Text Color' ) } colorValue={ textColor.value } >
-								<ColorPalette
-									value={ textColor.value }
-									onChange={ textColor.set }
-								/>
-							</PanelColor>
+							<PanelColor
+								colorName={ backgroundColor.name }
+								colorValue={ backgroundColor.value }
+								title={ __( 'Background Color' ) }
+								onChange={ backgroundColor.set }
+							/>
+							<PanelColor
+								colorName={ textColor.name }
+								colorValue={ textColor.value }
+								title={ __( 'Text Color' ) }
+								onChange={ textColor.set }
+							/>
 							{ this.nodeRef && <ContrastCheckerWithFallbackStyles
 								node={ this.nodeRef }
 								textColor={ textColor.value }
