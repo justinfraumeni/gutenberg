@@ -14,17 +14,29 @@ $empty-paragraph-height: $text-editor-font-size * 4;
 		font-family: $editor-font;
 		cursor: text;
 		width: 100%;
-		color: $dark-opacity-300; // use opacity to work in various editor styles
 		font-family: $editor-font;
 		outline: 1px solid transparent;
 		transition: 0.2s outline;
+
+		// use opacity to work in various editor styles
+		color: $dark-opacity-300;
+
+		.is-dark-theme & {
+			color: $light-opacity-300;
+		}
 	}
 
 	// Show quick insertion icons faded until hover
 	.editor-inserter-with-shortcuts {
 		.components-icon-button {
-			color: $dark-opacity-light-700; // use opacity to work in various editor styles
 			transition: color 0.2s;
+
+			// use opacity to work in various editor styles
+			color: $dark-opacity-light-700; // use opacity to work in various editor styles
+
+			.is-dark-theme & {
+				color: $light-opacity-light-700;
+			}
 		}
 	}
 
@@ -36,10 +48,6 @@ $empty-paragraph-height: $text-editor-font-size * 4;
 	&:hover {
 		.editor-inserter-with-shortcuts {
 			opacity: 1;
-
-			.components-icon-button {
-				color: $dark-gray-500;
-			}
 		}
 
 		.editor-inserter__toggle {
@@ -66,12 +74,19 @@ $empty-paragraph-height: $text-editor-font-size * 4;
 		right: auto;
 	}
 
-	.editor-inserter__toggle {
-		border-radius: 50%;
-	}
-
 	&:disabled {
 		display: none;
+	}
+
+	.editor-inserter__toggle {
+		border-radius: 50%;
+
+		// use opacity to work in various editor styles
+		color: $dark-opacity-500;
+
+		.is-dark-theme & {
+			color: $light-opacity-500;
+		}
 	}
 }
 
