@@ -183,7 +183,7 @@ function gutenberg_register_scripts_and_styles() {
 			'tinymce-latest-table',
 			'shortcode',
 			'wp-core-data',
-			'lodash'
+			'lodash',
 		),
 		filemtime( gutenberg_dir_path() . 'blocks/build/index.js' ),
 		true
